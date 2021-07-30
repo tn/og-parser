@@ -1,0 +1,18 @@
+{
+  "name": "og-parser",
+  "author": {
+    "email": "hello@nurislamov.io",
+    "name": "Timur Nurislamov",
+    "url": "https://github.com/tn"
+  },
+  "version": "0.0.1",
+  "main": "api/index.ts",
+  "license": "MIT",
+  "dependencies": {
+    "open-graph-scraper": "^4.9.0"
+  },
+  "devDependencies": {
+    "@types/open-graph-scraper": "^4.8.1",
+    "@vercel/node": "^1.11.1"
+  }
+}

@@ -36,6 +36,7 @@ export default async function (req: VercelRequest, res: VercelResponse): Promise
           results.push({ success: false })
         } else if (result.success) {
           results.push({
+            success: true,
             ...Object.entries(result).filter(([k]) => selectors.some(s => s === k)).reduce((acc, curr) => ({ ...acc, [curr[0]]: curr[1] }), {})
           })
         }
@@ -44,14 +45,13 @@ export default async function (req: VercelRequest, res: VercelResponse): Promise
       }
     }
 
-
     /**
      * Cache our response because parsing websites is heavey operation
      * and we don't want to be blocked by resources for frequent requests
      * @see https://vercel.com/docs/edge-network/caching
      */
      res.setHeader('Cache-Control', 's-maxage=86400, stale-while-revalidate')
-     res.json({ success: true, data: results })
+     res.json(results)
   } catch {
     res.writeHead(400)
     res.end()

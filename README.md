@@ -1,8 +1,6 @@
 # Open Graph Parser 
 Using openGraphScraper and Vercel Functions
 
-[![asciicast](https://asciinema.org/a/HWnPJjqIJxZqLIW2XrSfDhgCe.svg)](https://asciinema.org/a/HWnPJjqIJxZqLIW2XrSfDhgCe)
-
 ## Deploy to Vercel
 
 ```bash
